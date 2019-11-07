@@ -14,7 +14,7 @@ function CreatePerson() {
     setPhones([...phones, phone]);
     setPhone("");
   }
-  const submitForm = async (e) => {
+  const submitForm = (e) => {
     e.preventDefault();
     //unmask cpf
     var newDoc = parseInt(document.replace('-', '').replace(/\./g,'').substring(0,11));
