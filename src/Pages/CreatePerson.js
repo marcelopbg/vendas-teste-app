@@ -14,10 +14,10 @@ function CreatePerson() {
     setPhones([...phones, phone]);
     setPhone("");
   }
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
-    //umask cpf
-    var newDoc = document.replace('-', '').replace(/\./g,'')
+    //unmask cpf
+    var newDoc = parseInt(document.replace('-', '').replace(/\./g,'').substring(0,11));
     axios.post('http://localhost:4000/users/create', { name: name, document: newDoc, phones: phones })
       .then(response => {
         console.log(response)
