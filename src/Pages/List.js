@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Table } from 'react-bootstrap';
 import { useHistory } from "react-router-dom";
-import {cpfMask, phoneMask} from '../Utils/AnyUtils';
+import {cpfMask} from '../Utils/AnyUtils';
 
 function List() {
 
@@ -51,7 +51,7 @@ function List() {
                   <ul>
                     {JSON.parse(value.telefone).map((val, indice) => {
                       return (
-                        <li key={indice+"i"}> {phoneMask(val)} </li>
+                        <li key={indice+"i"}> {val} </li>
                       );
                     })}
                   </ul>
