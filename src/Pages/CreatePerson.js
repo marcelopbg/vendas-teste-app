@@ -20,7 +20,7 @@ function CreatePerson() {
     var newDoc = parseInt(document.replace('-', '').replace(/\./g,'').substring(0,11));
     axios.post('http://localhost:4000/users/create', { name: name, document: newDoc, phones: phones })
       .then(response => {
-        console.log(response)
+        alert('registro inserido com sucesso')
       })
   }
 
