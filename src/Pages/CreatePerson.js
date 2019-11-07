@@ -16,7 +16,9 @@ function CreatePerson() {
   }
   const submitForm = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:4000/users/create', { name: name, document: document, phones: phones })
+    //umask cpf
+    var newDoc = document.replace('-', '').replace(/\./g,'')
+    axios.post('http://localhost:4000/users/create', { name: name, document: newDoc, phones: phones })
       .then(response => {
         console.log(response)
       })
